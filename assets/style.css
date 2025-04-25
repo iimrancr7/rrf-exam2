@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+
+    /* font family */
+    --font-Montserrat: "Montserrat", sans-serif;
+  
+    /* brakpoint */
+    --breakpoint-1xl: 90rem;    /* 1440px */
+  
+    /* colors */
+    --color-Pink: #FFD4D0;
+    --color-Red: #FC3314;
+    --color-Dark: #1F1F1F;
+    --color-White: #FFF;
+    --color-black: #000;
+    --color-gray: #F7F7F7;
+    --color-light-gray: #8d8d8d;
+    --color-p-gray: #E1E1E1;
+
+    /*  */
+}
+
+body{
+    @apply font-Montserrat text-sm font-normal leading-[150%] min-w-80
+  }
+  button{
+    @apply cursor-pointer
+  }
+  
+  @layer base{
+    h1{
+      @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+    }
+    h2{
+      @apply text-2xl md:text-3xl lg:text-4xl font-bold 
+    }
+    h5{
+      @apply text-xl font-bold
+    }
+    p{
+      @apply text-base 
+    }
+  }
+
+@utility container{ 
+    @apply mx-auto px-4;
+    @media (width >= 90rem /* 1440px */) {
+          max-width: var(--breakpoint-1xl) /* 1440px */;
+          padding-inline: 7.75rem  /* 124px */; 
+      }
+}
+
+@layer components {
+    .btn {
+        @apply text-white bg-Dark py-3 px-6 font-bold hover:bg-Red hover:text-White hover:border-Red border border-Dark
+    }
+    .btn-md {
+      @apply px-13 hover:bg-Red hover:text-White 
+    }
+    .btn-bg {
+      @apply bg-Pink text-Dark
+    }
+  }
+  
